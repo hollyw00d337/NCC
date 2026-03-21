@@ -78,11 +78,11 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href="tel:+19706825555"
+                  href="tel:+19706325030"
                   className="flex items-center justify-center gap-3 px-8 py-4 border border-white/15 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-white/5 transition-colors"
                 >
                   <Phone className="h-4 w-4" />
-                  (970) 682-5555
+                  (970) 632-5030
                 </a>
               </div>
             </motion.div>

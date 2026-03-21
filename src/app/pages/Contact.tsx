@@ -96,7 +96,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-primary">Phone</h3>
-                  <p className="text-slate-600 mb-1">Main: (970) 682-5555</p>
+                  <p className="text-slate-600 mb-1">Main: (970) 632-5030</p>
                   <p className="text-slate-500 text-sm">Call or text for a free estimate</p>
                 </div>
               </div>
@@ -107,8 +107,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-primary">Email</h3>
-                  <p className="text-slate-600">office@ncc-build.com</p>
-                  <p className="text-slate-600">bids@ncc-build.com</p>
+                  <p className="text-slate-600">Info@ncccolorado.com</p>
                 </div>
               </div>
 

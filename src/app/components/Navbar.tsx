@@ -69,7 +69,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center">
             <a
-              href="tel:+19706825555"
+              href="tel:+19706325030"
               className="flex items-center gap-3 px-8 py-3 bg-secondary text-white rounded-sm hover:scale-105 transition-all shadow-xl shadow-secondary/20 active:scale-95"
             >
               <Phone className="h-4 w-4" />
@@ -126,7 +126,7 @@ export default function Navbar() {
 
             <div className="mt-auto pt-12 border-t border-white/10">
               <a
-                href="tel:+19706825555"
+                href="tel:+19706325030"
                 className="flex items-center justify-center gap-3 w-full py-6 bg-secondary text-white font-black tracking-widest uppercase rounded-sm"
               >
                 <Phone className="h-5 w-5" />

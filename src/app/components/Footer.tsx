@@ -72,8 +72,8 @@ export default function Footer() {
                 "Custom Home Building",
               ].map((service, i) => (
                 <li key={i} className="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-                   <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-secondary transition-colors" />
-                   {service}
+                  <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-secondary transition-colors" />
+                  {service}
                 </li>
               ))}
             </ul>
@@ -90,22 +90,21 @@ export default function Footer() {
                   <MapPin className="h-5 w-5 text-secondary" />
                 </div>
                 <span className="text-slate-400 text-sm leading-relaxed">
-                  Fort Collins · Greeley · Loveland<br />
-                  <span className="text-white font-bold">Northern Colorado</span><br />
-                  <span className="text-slate-500 text-xs">+ Walden &amp; Steamboat Springs</span>
+                  1201 E Mulberry St<br />
+                  <span className="text-white font-bold">Fort Collins, CO 80524</span>
                 </span>
               </div>
-              <a href="tel:+19706825555" className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-900 group hover:border-slate-800 transition-colors">
+              <a href="tel:+19706325030" className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-900 group hover:border-slate-800 transition-colors">
                 <div className="bg-accent/10 p-2.5 rounded-lg">
                   <Phone className="h-5 w-5 text-accent" />
                 </div>
-                <span className="text-slate-400 text-sm font-bold group-hover:text-white transition-colors">(970) 682-5555</span>
+                <span className="text-slate-400 text-sm font-bold group-hover:text-white transition-colors">(970) 632-5030</span>
               </a>
-              <a href="mailto:office@ncc-build.com" className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-900 group hover:border-slate-800 transition-colors">
+              <a href="mailto:Info@ncccolorado.com" className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-900 group hover:border-slate-800 transition-colors">
                 <div className="bg-white/10 p-2.5 rounded-lg">
                   <Mail className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-slate-400 text-sm font-bold group-hover:text-white transition-colors">office@ncc-build.com</span>
+                <span className="text-slate-400 text-sm font-bold group-hover:text-white transition-colors">Info@ncccolorado.com</span>
               </a>
             </div>
           </div>

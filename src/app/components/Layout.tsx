@@ -310,9 +310,9 @@ export default function Layout() {
                   size={20}
                 />
                 <span>
-                  123 Construction Blvd, Suite 400
+                  1201 E Mulberry St
                   <br />
-                  Austin, TX 78701
+                  Fort Collins, CO 80524
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -320,14 +320,14 @@ export default function Layout() {
                   className="text-orange-600 shrink-0"
                   size={20}
                 />
-                <span>(555) 123-4567</span>
+                <span>(970) 632-5030</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail
                   className="text-orange-600 shrink-0"
                   size={20}
                 />
-                <span>info@apexbuild.com</span>
+                <span>Info@ncccolorado.com</span>
               </li>
             </ul>
           </div>
