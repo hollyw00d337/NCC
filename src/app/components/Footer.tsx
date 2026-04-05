@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import logo from "../../assets/e0a7c900e7267bf5523e7895249679aabbecde0f.png";
+import logo from "../../assets/ncc-logo.png";
 
 export default function Footer() {
   return (

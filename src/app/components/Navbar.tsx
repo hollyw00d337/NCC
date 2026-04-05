@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router";
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import logo from "../../assets/456fabb955cacfc8ec473bfc360d837d3eb3ec0d.png";
+import logo from "../../assets/ncc-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
