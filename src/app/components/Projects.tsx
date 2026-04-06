@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import imgKitchen from ".C:\Users\itzel\NCC\src\assets\Kitchens\kitchen_01.jpeg";
+import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
 import imgRoofing from "../../assets/b50090c89b546ab9b195ac22a28d5824694ae0dc.png";
 import imgBasement from "../../assets/9b9be97e457bc094618b626fd34d06c2f41919b7.png";

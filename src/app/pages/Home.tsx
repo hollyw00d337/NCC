@@ -13,7 +13,7 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Testimonials } from "../components/Testimonials";
 import { Projects } from "../components/Projects";
-import imgWalkway from "../../assets/5dff2e8a0be5ebe5827005c8cbaad6720bca5384.png";
+import imgWalkway from "../../assets/custom.jpg";
 import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
 import imgDecks from "../../assets/decks.jpg";

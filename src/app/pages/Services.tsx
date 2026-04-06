@@ -1,16 +1,16 @@
 import { ArrowRight, Hammer, ShieldCheck, PaintBucket, HardHat, Home as HomeIcon, Droplets, Bath, ChefHat, Award, Grid3X3, Layers, DoorOpen, TreePine, Sofa, Landmark } from "lucide-react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import imgWalkway from "../../assets/5dff2e8a0be5ebe5827005c8cbaad6720bca5384.png";
+import imgConcrete from "../../assets/concrete.jpeg";
 import imgTrench from "../../assets/9497f52d00cf5573df7b561ddc8692376a4cd1ac.png";
 import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgCustomHome from "../../assets/360c771a15cc39a97e2f8946a53d41923b997819.png";
 import imgWindowsDoors from "../../assets/188037999d00ee9cb89df9f75c003be506273c32.png";
 import imgRoofing from "../../assets/b50090c89b546ab9b195ac22a28d5824694ae0dc.png";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
-import imgBasement from "../../assets/9b9be97e457bc094618b626fd34d06c2f41919b7.png";
+import imgBasement from "../../assets/basement.jpeg";
 import imgDecks from "../../assets/2ac8d1523147818b3c1282394425a316a0484b87.png";
-import imgHomeAdditions from "../../assets/55a529a018cf753fcd605f89208146c4c3a9f912.png";
+import imgHomeAdditions from "../../assets/home.jpeg";
 import imgFlooring from "../../assets/d054f1e986ae89d9b78f22c1e73e48022efa5374.png";
 import imgPainting from "../../assets/painting_house.jpg.png";
 import imgMasonry from "../../assets/mansory_stucco2.jpeg";
@@ -90,7 +90,7 @@ export default function Services() {
       title: "Concrete Work",
       desc: "Expert concrete installations for driveways, patios, walkways, and foundations. Our stamped and decorative concrete options add beauty and durability built for Colorado's demanding freeze-thaw climate.",
       features: ["Driveways & Walkways", "Stamped Concrete Patios", "Foundations & Slabs", "Decorative Staining", "Crack Repair & Sealing", "Retaining Walls"],
-      image: imgWalkway
+      image: imgConcrete
     },
     {
       icon: <Landmark className="h-12 w-12 text-white" />,
