@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import imgKitchen from "../../assets/d158dd299136b99ee896766d38aeb4eea63208d0.png";
+import imgKitchen from ".C:\Users\itzel\NCC\src\assets\Kitchens\kitchen_01.jpeg";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
 import imgRoofing from "../../assets/b50090c89b546ab9b195ac22a28d5824694ae0dc.png";
 import imgBasement from "../../assets/9b9be97e457bc094618b626fd34d06c2f41919b7.png";
@@ -98,8 +98,8 @@ export function Projects() {
                 Our Portfolio
               </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -113,7 +113,7 @@ export function Projects() {
             </motion.h2>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -123,11 +123,10 @@ export function Projects() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
-                  filter === cat
+                className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${filter === cat
                     ? "bg-secondary border-secondary text-white shadow-lg shadow-secondary/25"
                     : "bg-transparent border-white/10 text-slate-400 hover:border-white/30 hover:text-white"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -152,9 +151,9 @@ export function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90 transition-opacity duration-300" />
-                
+
                 <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="mb-4 overflow-hidden">
                     <span className="inline-block px-3 py-1 bg-secondary/90 text-white text-[10px] font-black uppercase tracking-widest mb-3 backdrop-blur-md">
@@ -164,7 +163,7 @@ export function Projects() {
                       {project.title}
                     </h3>
                   </div>
-                  
+
                   <div className="flex items-center gap-3 text-white font-bold uppercase tracking-widest text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                     View Project <ArrowUpRight className="h-4 w-4" />
                   </div>
@@ -176,15 +175,15 @@ export function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
-        
+
         <div className="mt-20 text-center">
-           <Link 
-             to="/projects" 
-             className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-sm hover:bg-white/5 hover:border-white/40 transition-all uppercase tracking-widest group"
-           >
-             <span>View All Projects</span>
-             <ArrowUpRight className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-           </Link>
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-sm hover:bg-white/5 hover:border-white/40 transition-all uppercase tracking-widest group"
+          >
+            <span>View All Projects</span>
+            <ArrowUpRight className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

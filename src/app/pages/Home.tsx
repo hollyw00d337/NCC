@@ -14,8 +14,9 @@ import { motion } from "motion/react";
 import { Testimonials } from "../components/Testimonials";
 import { Projects } from "../components/Projects";
 import imgWalkway from "../../assets/5dff2e8a0be5ebe5827005c8cbaad6720bca5384.png";
-import imgKitchen from "../../assets/d158dd299136b99ee896766d38aeb4eea63208d0.png";
+import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
+import imgDecks from "../../assets/decks.jpg";
 
 export default function Home() {
   return (
@@ -243,7 +244,7 @@ export default function Home() {
                 title: "DECKS & OUTDOOR LIVING",
                 desc: "Durable custom decks, pergolas, and stamped concrete patios built for Colorado's outdoor lifestyle and mountain weather.",
                 icon: <ShieldCheck className="h-8 w-8" />,
-                img: "https://images.unsplash.com/photo-1760552268175-431696421106?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBkZWNrJTIwb3V0ZG9vciUyMGxpdmluZyUyMGJhY2t5YXJkfGVufDF8fHx8MTc3Mzg5Mjc3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+                img: imgDecks,
               },
               {
                 title: "CUSTOM HOME BUILDING",

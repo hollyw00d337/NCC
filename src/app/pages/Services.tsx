@@ -1,9 +1,9 @@
-import { ArrowRight, Hammer, ShieldCheck, PaintBucket, HardHat, Home as HomeIcon, Droplets, Bath, ChefHat, Award, Grid3X3, Layers, DoorOpen, TreePine, Sofa } from "lucide-react";
+import { ArrowRight, Hammer, ShieldCheck, PaintBucket, HardHat, Home as HomeIcon, Droplets, Bath, ChefHat, Award, Grid3X3, Layers, DoorOpen, TreePine, Sofa, Landmark } from "lucide-react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import imgWalkway from "../../assets/5dff2e8a0be5ebe5827005c8cbaad6720bca5384.png";
 import imgTrench from "../../assets/9497f52d00cf5573df7b561ddc8692376a4cd1ac.png";
-import imgKitchen from "../../assets/d158dd299136b99ee896766d38aeb4eea63208d0.png";
+import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgCustomHome from "../../assets/360c771a15cc39a97e2f8946a53d41923b997819.png";
 import imgWindowsDoors from "../../assets/188037999d00ee9cb89df9f75c003be506273c32.png";
 import imgRoofing from "../../assets/b50090c89b546ab9b195ac22a28d5824694ae0dc.png";
@@ -12,7 +12,8 @@ import imgBasement from "../../assets/9b9be97e457bc094618b626fd34d06c2f41919b7.p
 import imgDecks from "../../assets/2ac8d1523147818b3c1282394425a316a0484b87.png";
 import imgHomeAdditions from "../../assets/55a529a018cf753fcd605f89208146c4c3a9f912.png";
 import imgFlooring from "../../assets/d054f1e986ae89d9b78f22c1e73e48022efa5374.png";
-import imgPainting from "../../assets/6b6e141c231b8ca93ccaa2a49c9c3a046cdc596d.png";
+import imgPainting from "../../assets/painting_house.jpg.png";
+import imgMasonry from "../../assets/mansory_stucco2.jpeg";
 
 export default function Services() {
   const services = [
@@ -45,6 +46,16 @@ export default function Services() {
       desc: "Extend your living space outdoors with custom-built decks, pergolas, and patio covers. We use premium cedar, composite, and treated lumber — designed to endure Colorado's freeze-thaw cycles and mountain weather.",
       features: ["Custom Deck Design & Build", "Pergolas & Shade Structures", "Composite & Cedar Decking", "Railings & Built-ins", "Outdoor Kitchens", "Colorado Weather-Rated Materials"],
       image: imgDecks
+    },
+    {
+      flagship: true,
+      premium: true,
+      icon: <Award className="h-12 w-12 text-white" />,
+      title: "Custom Home Building",
+      badge: "Premium Specialty",
+      desc: "Build your dream home from the ground up with NCC LLC. Our full-service custom home building brings together design, structural expertise, and quality craftsmanship — delivering a one-of-a-kind home built for life in Northern Colorado.",
+      features: ["Full Design-Build Service", "Architectural Coordination", "Custom Floor Plans", "High-End Finishes", "Energy-Efficient Construction", "Walden & Steamboat Coverage"],
+      image: imgCustomHome
     },
     {
       icon: <HardHat className="h-12 w-12 text-white" />,
@@ -82,13 +93,11 @@ export default function Services() {
       image: imgWalkway
     },
     {
-      premium: true,
-      icon: <Award className="h-12 w-12 text-white" />,
-      title: "Custom Home Building",
-      badge: "Premium Specialty",
-      desc: "Build your dream home from the ground up with NCC LLC. Our full-service custom home building brings together design, structural expertise, and quality craftsmanship — delivering a one-of-a-kind home built for life in Northern Colorado.",
-      features: ["Full Design-Build Service", "Architectural Coordination", "Custom Floor Plans", "High-End Finishes", "Energy-Efficient Construction", "Walden & Steamboat Coverage"],
-      image: imgCustomHome
+      icon: <Landmark className="h-12 w-12 text-white" />,
+      title: "Masonry & Stucco",
+      desc: "Expert masonry and stucco services for residential and commercial properties. From natural stone and brickwork to EIFS and traditional hard coat stucco systems — built to last in Colorado's demanding climate.",
+      features: ["Natural Stone", "Brickwork", "Pavers", "Flagstone Work", "Veneer", "EIFS Stucco System", "Traditional Hard Coat Stucco"],
+      image: imgMasonry
     },
   ];
 
@@ -193,9 +202,8 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: (index % 3) * 0.08 }}
                 viewport={{ once: true }}
-                className={`bg-slate-900 rounded-sm overflow-hidden border flex flex-col group hover:-translate-y-2 transition-transform duration-300 ${
-                  service.premium ? "border-yellow-500/30" : "border-white/5"
-                }`}
+                className={`bg-slate-900 rounded-sm overflow-hidden border flex flex-col group hover:-translate-y-2 transition-transform duration-300 ${service.premium ? "border-yellow-500/30" : "border-white/5"
+                  }`}
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -237,11 +245,10 @@ export default function Services() {
 
                   <Link
                     to="/contact"
-                    className={`w-full py-4 font-black rounded-sm hover:scale-105 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs ${
-                      service.premium
-                        ? "bg-yellow-500 text-slate-950 shadow-lg shadow-yellow-500/20"
-                        : "bg-white/5 border border-white/10 text-white hover:bg-secondary hover:border-secondary"
-                    }`}
+                    className={`w-full py-4 font-black rounded-sm hover:scale-105 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs ${service.premium
+                      ? "bg-yellow-500 text-slate-950 shadow-lg shadow-yellow-500/20"
+                      : "bg-white/5 border border-white/10 text-white hover:bg-secondary hover:border-secondary"
+                      }`}
                   >
                     Get My Free Estimate
                     <ArrowRight className="h-4 w-4" />
