@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "../../assets/ncc-logo.png";
 
 export default function Footer() {
@@ -16,17 +16,6 @@ export default function Footer() {
             <p className="text-slate-400 mb-8 leading-relaxed max-w-sm">
               NCC LLC — locally & owner-operated in Northern Colorado. 30+ years of combined experience, OSHA 30 certified crews, and BBB accredited. Craftsmanship You Can Trust.
             </p>
-            <div className="flex space-x-5">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -64,11 +53,12 @@ export default function Footer() {
                 "Kitchen & Bath Remodeling",
                 "Basement Finishing",
                 "Decks & Outdoor Living",
-                "Siding & Gutters",
-                "Home Additions",
+                "Mansory & Stucco",
+                "Concrete Work",
                 "Interior & Exterior Painting",
                 "Flooring & Tile",
-                "Windows & Doors",
+                "Septic Systems Installation",
+                "Excavation",
                 "Custom Home Building",
               ].map((service, i) => (
                 <li key={i} className="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
@@ -114,11 +104,7 @@ export default function Footer() {
           <p className="text-slate-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} <span className="text-white font-bold">NCC LLC</span>. Craftsmanship You Can Trust. · OSHA 30 Certified · BBB Accredited
           </p>
-          <div className="flex flex-wrap justify-center gap-8 text-slate-500 text-xs font-bold uppercase tracking-widest">
-            <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-secondary transition-colors">Cookie Settings</a>
-          </div>
+
         </div>
       </div>
     </footer>

@@ -158,7 +158,7 @@ export default function Home() {
                 icon: (
                   <CheckCircle className="h-4 w-4 text-secondary" />
                 ),
-                label: "Locally & Owner-Operated",
+                label: "Locally Owned and Operated",
               },
               {
                 icon: (
@@ -201,22 +201,22 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1727777266423-6a33048e4894?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb29mJTIwcmVwYWlyJTIwc2hpbmdsZXMlMjBob3VzZXxlbnwxfHx8fDE3NzIwNTgyMzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Roofing"
-              className="w-full h-72 object-cover opacity-50 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-center px-12">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-secondary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1">
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/40 md:to-transparent" />
+            <div className="relative z-10 flex flex-col justify-center px-5 sm:px-8 md:px-12 py-8 sm:py-10 md:py-14 min-h-[280px] md:min-h-[320px]">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span className="bg-secondary text-white text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1">
                   Flagship Service
                 </span>
-                <span className="bg-secondary/20 border border-secondary/40 text-secondary text-[10px] font-black uppercase tracking-widest px-3 py-1">
+                <span className="bg-secondary/20 border border-secondary/40 text-secondary text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1">
                   OSHA 30 Certified Crews
                 </span>
               </div>
-              <h3 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
-                ROOFING &amp; STORM DAMAGE REPAIR
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-3 tracking-tight leading-tight">
+                ROOFING &amp; STORM<br className="hidden sm:block" /> DAMAGE REPAIR
               </h3>
-              <p className="text-slate-400 max-w-xl mb-6 leading-relaxed">
+              <p className="text-slate-400 max-w-xl mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Impact-resistant systems, full replacements,
                 leak repairs & insurance claim assistance —
                 designed for Colorado's heavy snow, hail, and

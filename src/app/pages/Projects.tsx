@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, ArrowRight, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import { X, ArrowRight, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -59,6 +59,30 @@ import concrete17 from "../../assets/Concrete/concrete_17.jpeg";
 import concrete18 from "../../assets/Concrete/concrete_18.jpeg";
 import concrete19 from "../../assets/Concrete/concrete_19.jpeg";
 
+// ── Masonry & Stucco imports ──
+import masonry01 from "../../assets/mansory/concrete.jpeg";
+import masonry02 from "../../assets/mansory/concrete1.jpeg";
+import masonry03 from "../../assets/mansory/concrete2.jpeg";
+import masonry04 from "../../assets/mansory/concrete3.jpeg";
+import masonry05 from "../../assets/mansory/concrete4.jpeg";
+import masonry06 from "../../assets/mansory/concrete5.jpeg";
+import masonry07 from "../../assets/mansory/concrete6.jpeg";
+import masonry08 from "../../assets/mansory/concrete7.jpeg";
+import masonry09 from "../../assets/mansory/concrete8.jpeg";
+import masonry10 from "../../assets/mansory/concrete9.jpeg";
+import masonry11 from "../../assets/mansory/concrete10.jpeg";
+import masonry12 from "../../assets/mansory/concrete11.jpeg";
+import masonry13 from "../../assets/mansory/concrete12.jpeg";
+import masonry14 from "../../assets/mansory/concrete13.jpeg";
+import masonry15 from "../../assets/mansory/concrete14.jpeg";
+import masonry16 from "../../assets/mansory/concrete15.jpeg";
+import masonry17 from "../../assets/mansory/concrete16.jpeg";
+import masonry18 from "../../assets/mansory/concrete17.jpeg";
+import masonry19 from "../../assets/mansory/concrete18.jpeg";
+import masonry20 from "../../assets/mansory/concrete19.jpeg";
+import masonry21 from "../../assets/mansory/concrete20.jpeg";
+import masonry22 from "../../assets/mansory/concrete21.jpeg";
+
 interface Section {
   id: string;
   title: string;
@@ -67,8 +91,6 @@ interface Section {
   description: string;
   photos: string[];
 }
-
-const PREVIEW_COUNT = 6;
 
 const sections: Section[] = [
   {
@@ -109,6 +131,21 @@ const sections: Section[] = [
       concrete06, concrete07, concrete08, concrete09, concrete10,
       concrete11, concrete12, concrete13, concrete14, concrete15,
       concrete16, concrete17, concrete18, concrete19,
+    ],
+  },
+  {
+    id: "masonry",
+    title: "MASONRY & STUCCO",
+    accent: "from-violet-400 via-purple-400 to-fuchsia-400",
+    accentColor: "rgb(167, 139, 250)",
+    description:
+      "Expert masonry and stucco work — natural stone, brickwork, pavers, flagstone, veneer, EIFS and traditional hard coat stucco systems built to last.",
+    photos: [
+      masonry01, masonry02, masonry03, masonry04, masonry05,
+      masonry06, masonry07, masonry08, masonry09, masonry10,
+      masonry11, masonry12, masonry13, masonry14, masonry15,
+      masonry16, masonry17, masonry18, masonry19, masonry20,
+      masonry21, masonry22,
     ],
   },
 ];
@@ -168,111 +205,114 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Sections */}
-      {sections.map((section, sIdx) => {
-        const isExpanded = expandedSections[section.id] ?? false;
-        const hasMore = section.photos.length > PREVIEW_COUNT;
-        const visiblePhotos = isExpanded ? section.photos : section.photos.slice(0, PREVIEW_COUNT);
-        const hiddenCount = section.photos.length - PREVIEW_COUNT;
+      {/* Sections — Compact Accordion */}
+      <div className="container mx-auto px-6 lg:px-12 py-12">
+        <div className="space-y-3">
+          {sections.map((section, sIdx) => {
+            const isExpanded = expandedSections[section.id] ?? false;
 
-        return (
-          <div key={section.id} className={`${sIdx % 2 === 0 ? "bg-slate-950" : "bg-slate-900/50"}`}>
-            <div className="container mx-auto px-6 lg:px-12 py-20">
-              {/* Section Header */}
+            return (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                key={section.id}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.4, delay: sIdx * 0.08 }}
                 viewport={{ once: true }}
-                className="mb-12"
+                className={`rounded-sm border transition-colors duration-300 overflow-hidden ${
+                  isExpanded
+                    ? "bg-slate-900/80 border-white/10"
+                    : "bg-slate-900/30 border-white/5 hover:border-white/15 hover:bg-slate-900/50"
+                }`}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`h-[3px] w-16 bg-gradient-to-r ${section.accent}`} />
-                  <span className="text-slate-500 font-mono text-xs uppercase tracking-[0.3em]">
+                {/* Clickable Header Row */}
+                <button
+                  onClick={() => toggleSection(section.id)}
+                  className="w-full flex items-center gap-4 sm:gap-6 px-5 sm:px-8 py-5 sm:py-6 text-left group cursor-pointer"
+                >
+                  {/* Number */}
+                  <span className="text-slate-600 font-mono text-xs tracking-[0.3em] flex-shrink-0 hidden sm:block">
                     {String(sIdx + 1).padStart(2, "0")}
                   </span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4">
-                  <span className={`text-transparent bg-clip-text bg-gradient-to-r ${section.accent}`}>
-                    {section.title}
-                  </span>
-                </h2>
-                <p className="text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
-                  {section.description}
-                </p>
-              </motion.div>
 
-              {/* Gallery */}
-              <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}>
-                <Masonry gutter="12px">
-                  {visiblePhotos.map((src, pIdx) => (
-                    <motion.div
-                      key={`${section.id}-${pIdx}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: pIdx < PREVIEW_COUNT ? (pIdx % 3) * 0.08 : (pIdx - PREVIEW_COUNT) * 0.03 }}
-                      className="group relative overflow-hidden rounded-sm cursor-pointer"
-                      onClick={() => openLightbox(sIdx, pIdx)}
-                    >
-                      <img
-                        src={src}
-                        alt={`NCC LLC ${section.title.toLowerCase()} project ${pIdx + 1}`}
-                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                      />
+                  {/* Accent bar */}
+                  <div className={`h-8 w-1 rounded-full bg-gradient-to-b ${section.accent} flex-shrink-0`} />
 
-                      {/* Overlay gradient on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                      {/* Border on hover */}
-                      <div className="absolute inset-0 border border-white/0 group-hover:border-secondary/40 transition-colors duration-300 pointer-events-none rounded-sm" />
-                    </motion.div>
-                  ))}
-                </Masonry>
-              </ResponsiveMasonry>
-
-              {/* Expand / Collapse Button */}
-              {hasMore && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="mt-10 flex justify-center"
-                >
-                  <button
-                    onClick={() => toggleSection(section.id)}
-                    className="group/btn relative flex items-center gap-3 px-8 py-4 rounded-sm border border-white/10 hover:border-white/25 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300"
-                  >
-                    <span className="text-sm font-black uppercase tracking-widest text-slate-300 group-hover/btn:text-white transition-colors">
-                      {isExpanded ? "Show Less" : `View All ${section.photos.length} Photos`}
-                    </span>
-                    <span
-                      className="flex items-center justify-center w-7 h-7 rounded-full transition-colors"
-                      style={{ backgroundColor: `${section.accentColor}20` }}
-                    >
-                      {isExpanded ? (
-                        <ChevronUp className="h-4 w-4" style={{ color: section.accentColor }} />
-                      ) : (
-                        <ChevronDown className="h-4 w-4" style={{ color: section.accentColor }} />
-                      )}
-                    </span>
-                    {!isExpanded && (
-                      <span
-                        className="text-xs font-mono px-2 py-0.5 rounded-full"
-                        style={{
-                          backgroundColor: `${section.accentColor}15`,
-                          color: section.accentColor,
-                        }}
-                      >
-                        +{hiddenCount}
+                  {/* Title + description */}
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight leading-tight">
+                      <span className={`text-transparent bg-clip-text bg-gradient-to-r ${section.accent}`}>
+                        {section.title}
                       </span>
-                    )}
-                  </button>
-                </motion.div>
-              )}
-            </div>
-          </div>
-        );
-      })}
+                    </h2>
+                    <p className="text-slate-500 text-sm mt-1 truncate max-w-xl">
+                      {section.description}
+                    </p>
+                  </div>
+
+                  {/* Photo count badge */}
+                  <span
+                    className="text-xs font-mono px-3 py-1.5 rounded-full flex-shrink-0"
+                    style={{
+                      backgroundColor: `${section.accentColor}12`,
+                      color: section.accentColor,
+                    }}
+                  >
+                    {section.photos.length} photos
+                  </span>
+
+                  {/* Chevron */}
+                  <span
+                    className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 transition-all duration-300 ${
+                      isExpanded ? "rotate-180" : ""
+                    }`}
+                    style={{ backgroundColor: `${section.accentColor}15` }}
+                  >
+                    <ChevronDown className="h-4 w-4" style={{ color: section.accentColor }} />
+                  </span>
+                </button>
+
+                {/* Expandable Gallery */}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 sm:px-8 pb-8 pt-2">
+                        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}>
+                          <Masonry gutter="12px">
+                            {section.photos.map((src, pIdx) => (
+                              <motion.div
+                                key={`${section.id}-${pIdx}`}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: (pIdx % 6) * 0.05 }}
+                                className="group relative overflow-hidden rounded-sm cursor-pointer"
+                                onClick={() => openLightbox(sIdx, pIdx)}
+                              >
+                                <img
+                                  src={src}
+                                  alt={`NCC LLC ${section.title.toLowerCase()} project ${pIdx + 1}`}
+                                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute inset-0 border border-white/0 group-hover:border-secondary/40 transition-colors duration-300 pointer-events-none rounded-sm" />
+                              </motion.div>
+                            ))}
+                          </Masonry>
+                        </ResponsiveMasonry>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
 
       {/* CTA Section */}
       <div className="bg-slate-900 py-24 border-t border-white/5">
