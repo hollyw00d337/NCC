@@ -115,7 +115,7 @@ const sections: Section[] = [
     description:
       "Precision tile installations for floors, bathrooms, backsplashes, and entryways — built to last and crafted to impress.",
     photos: [
-      tile01, tile02, tile03, tile04, tile05, tile06, tile07,
+      tile05, tile02, tile03, tile04, tile01, tile06, tile07,
       tile08, tile09, tile10, tile11, tile12, tile13, tile14,
     ],
   },
@@ -206,98 +206,109 @@ export default function Projects() {
       </div>
 
       {/* Sections — Compact Accordion */}
+      {/* Sections — Visual Cards Accordion */}
       <div className="container mx-auto px-6 lg:px-12 py-12">
-        <div className="space-y-3">
+        <div className="space-y-8">
           {sections.map((section, sIdx) => {
             const isExpanded = expandedSections[section.id] ?? false;
 
             return (
               <motion.div
                 key={section.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: sIdx * 0.08 }}
+                transition={{ duration: 0.5, delay: sIdx * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-sm border transition-colors duration-300 overflow-hidden ${isExpanded
-                  ? "bg-slate-900/80 border-white/10"
-                  : "bg-slate-900/30 border-white/5 hover:border-white/15 hover:bg-slate-900/50"
-                  }`}
+                className="rounded-sm overflow-hidden border border-white/5 bg-slate-900/20 hover:bg-slate-900/40 transition-all duration-500"
               >
-                {/* Clickable Header Row */}
+                {/* CABECERA TIPO BANNER (Imagen + Descripción) */}
                 <button
                   onClick={() => toggleSection(section.id)}
-                  className="w-full flex items-center gap-4 sm:gap-6 px-5 sm:px-8 py-5 sm:py-6 text-left group cursor-pointer"
+                  className="w-full relative group cursor-pointer overflow-hidden flex flex-col md:flex-row min-h-[350px] text-left"
                 >
-                  {/* Number */}
-                  <span className="text-slate-600 font-mono text-xs tracking-[0.3em] flex-shrink-0 hidden sm:block">
-                    {String(sIdx + 1).padStart(2, "0")}
-                  </span>
+                  {/* Lado de la Imagen */}
+                  <div className="relative w-full md:w-2/5 h-72 md:h-[450px] overflow-hidden">
+                    <img
+                      src={section.photos[0]}
+                      alt={section.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500" />
 
-                  {/* Accent bar */}
-                  <div className={`h-8 w-1 rounded-full bg-gradient-to-b ${section.accent} flex-shrink-0`} />
-
-                  {/* Title + description */}
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight leading-tight">
-                      <span className={`text-transparent bg-clip-text bg-gradient-to-r ${section.accent}`}>
-                        {section.title}
+                    <div className="absolute bottom-4 left-4">
+                      <span className="bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-mono px-3 py-1.5 border border-white/10 uppercase tracking-widest">
+                        {section.photos.length} Project Photos
                       </span>
-                    </h2>
-                    <p className="text-slate-500 text-sm mt-1 truncate max-w-xl">
-                      {section.description}
-                    </p>
+                    </div>
                   </div>
 
-                  {/* Photo count badge */}
-                  <span
-                    className="text-xs font-mono px-3 py-1.5 rounded-full flex-shrink-0"
-                    style={{
-                      backgroundColor: `${section.accentColor}12`,
-                      color: section.accentColor,
-                    }}
-                  >
-                    {section.photos.length} photos
-                  </span>
+                  {/* Lado del Contenido */}
+                  <div className="relative flex-1 p-8 md:p-12 flex flex-col justify-center">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className={`h-[2px] w-8 bg-gradient-to-r ${section.accent}`} />
+                      <span className="text-[10px] font-mono text-slate-500 tracking-[0.4em] uppercase">
+                        Portfolio Section {String(sIdx + 1).padStart(2, "0")}
+                      </span>
+                    </div>
 
-                  {/* Chevron */}
-                  <span
-                    className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 transition-all duration-300 ${isExpanded ? "rotate-180" : ""
-                      }`}
-                    style={{ backgroundColor: `${section.accentColor}15` }}
-                  >
-                    <ChevronDown className="h-4 w-4" style={{ color: section.accentColor }} />
-                  </span>
+                    <h2 className={`text-4xl md:text-5xl font-black mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r ${section.accent}`}>
+                      {section.title}
+                    </h2>
+
+                    <p className="text-slate-400 text-lg md:text-xl max-w-2xl mb-8 font-light leading-relaxed">
+                      {section.description}
+                    </p>
+
+                    <div className="mt-auto">
+                      <div
+                        className="inline-flex items-center gap-3 px-6 py-3 border border-white/10 rounded-full group-hover:border-white/30 transition-all"
+                        style={{ backgroundColor: isExpanded ? `${section.accentColor}15` : 'transparent' }}
+                      >
+                        <span className="text-white font-black text-[10px] uppercase tracking-widest">
+                          {isExpanded ? "Hide Gallery" : "View Gallery"}
+                        </span>
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-500 ${isExpanded ? "rotate-180" : ""}`}
+                          style={{ color: section.accentColor }}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </button>
 
-                {/* Expandable Gallery */}
-                <AnimatePresence initial={false}>
+                {/* GALERÍA MASONRY (Se revela al expandir) */}
+                <AnimatePresence>
                   {isExpanded && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                      className="overflow-hidden"
+                      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                      className="bg-slate-950/40 border-t border-white/5"
                     >
-                      <div className="px-5 sm:px-8 pb-8 pt-2">
+                      <div className="p-6 md:p-12">
+                        <div className="flex items-center gap-4 mb-10 text-slate-600">
+                          <span className="text-[10px] font-mono uppercase tracking-[0.3em]">Full Project Gallery</span>
+                          <div className="h-px flex-1 bg-white/5" />
+                        </div>
+
                         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}>
-                          <Masonry gutter="12px">
+                          <Masonry gutter="16px">
                             {section.photos.map((src, pIdx) => (
                               <motion.div
                                 key={`${section.id}-${pIdx}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: (pIdx % 6) * 0.05 }}
-                                className="group relative overflow-hidden rounded-sm cursor-pointer"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3, delay: (pIdx % 10) * 0.05 }}
+                                className="group relative overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5"
                                 onClick={() => openLightbox(sIdx, pIdx)}
                               >
                                 <img
                                   src={src}
-                                  alt={`NCC LLC ${section.title.toLowerCase()} project ${pIdx + 1}`}
-                                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                                  alt={`Gallery ${pIdx}`}
+                                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <div className="absolute inset-0 border border-white/0 group-hover:border-secondary/40 transition-colors duration-300 pointer-events-none rounded-sm" />
                               </motion.div>
                             ))}
                           </Masonry>
@@ -309,25 +320,6 @@ export default function Projects() {
               </motion.div>
             );
           })}
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-slate-900 py-24 border-t border-white/5">
-        <div className="container mx-auto px-6 lg:px-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter">
-            READY TO START YOUR <span className="text-secondary italic font-light">PROJECT?</span>
-          </h2>
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-12 font-light">
-            From the initial consultation to the final walkthrough, NCC LLC is your trusted partner for quality
-            construction in Colorado.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-secondary text-white font-black rounded-sm hover:scale-105 transition-all shadow-xl shadow-secondary/20 uppercase tracking-widest"
-          >
-            Get a Free Quote <ArrowRight className="h-5 w-5" />
-          </Link>
         </div>
       </div>
 
