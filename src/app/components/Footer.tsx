@@ -58,8 +58,9 @@ export default function Footer() {
                 "Interior & Exterior Painting",
                 "Flooring & Tile",
                 "Septic Systems Installation",
-                "Excavation",
+                "Pole Barns And Metal Buildings",
                 "Custom Home Building",
+                "Excavation And More",
               ].map((service, i) => (
                 <li key={i} className="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-secondary transition-colors" />

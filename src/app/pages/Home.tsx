@@ -17,6 +17,7 @@ import imgWalkway from "../../assets/custom.jpg";
 import imgKitchen from "../../assets/Kitchens/kitchen_01.jpeg";
 import imgRoofing2 from "../../assets/dff8ee71d58f85e190ab3e01f37ec45149d6a786.png";
 import imgDecks from "../../assets/decks.jpg";
+import imgRoof from "../../assets/roof.jpeg";
 
 export default function Home() {
   return (
@@ -196,41 +197,64 @@ export default function Home() {
             <div className="max-w-sm"></div>
           </div>
 
-          {/* Flagship Roofing Banner */}
-          <div className="relative bg-slate-950 rounded-sm overflow-hidden mb-10 group">
-            <img
-              src="https://images.unsplash.com/photo-1727777266423-6a33048e4894?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb29mJTIwcmVwYWlyJTIwc2hpbmdsZXMlMjBob3VzZXxlbnwxfHx8fDE3NzIwNTgyMzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Roofing"
-              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/40 md:to-transparent" />
-            <div className="relative z-10 flex flex-col justify-center px-5 sm:px-8 md:px-12 py-8 sm:py-10 md:py-14 min-h-[280px] md:min-h-[320px]">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <span className="bg-secondary text-white text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1">
+          {/* Flagship Roofing Card (Estilo Kitchen & Bath) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group relative bg-white rounded-lg overflow-hidden border border-slate-100 mb-10 transition-all duration-500 hover:shadow-2xl"
+          >
+            {/* Imagen superior - Manteniendo la altura consistente con el lenguaje visual de las de abajo */}
+            <div className="h-80 md:h-[400px] overflow-hidden relative">
+              <img
+                src={imgRoof}
+                alt="Roofing"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              />
+              {/* Badge flotante para darle importancia extra al ser Flagship */}
+              <div className="absolute top-6 left-6">
+                <span className="bg-secondary text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 shadow-xl">
                   Flagship Service
                 </span>
-                <span className="bg-secondary/20 border border-secondary/40 text-secondary text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1">
-                  OSHA 30 Certified Crews
-                </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-3 tracking-tight leading-tight">
-                ROOFING &amp; STORM<br className="hidden sm:block" /> DAMAGE REPAIR
-              </h3>
-              <p className="text-slate-400 max-w-xl mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Impact-resistant systems, full replacements,
-                leak repairs & insurance claim assistance —
-                designed for Colorado's heavy snow, hail, and
-                high-altitude UV exposure.
-              </p>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-secondary font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all"
-              >
-                Explore Roofing Services{" "}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
-          </div>
+
+            {/* Contenido inferior con el mismo padding y estilo que Kitchen */}
+            <div className="p-8 md:p-12 bg-white">
+              {/* Icono flotante (El sello de identidad de tus tarjetas) */}
+              <div className="bg-white w-20 h-20 flex items-center justify-center rounded-sm shadow-2xl -mt-20 md:-mt-24 relative z-10 mb-8 group-hover:bg-secondary transition-colors duration-300">
+                <ShieldCheck className="h-10 w-10 text-secondary group-hover:text-white transition-colors" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-secondary font-black text-xs uppercase tracking-tighter">OSHA 30 Certified</span>
+                    <div className="h-px w-12 bg-slate-200"></div>
+                  </div>
+
+                  <h3 className="text-3xl md:text-5xl font-black text-slate-950 mb-4 tracking-tight leading-none">
+                    ROOFING & STORM<br /> DAMAGE REPAIR
+                  </h3>
+
+                  <p className="text-slate-600 max-w-xl leading-relaxed font-medium text-lg">
+                    Impact-resistant systems, full replacements, and insurance claim assistance
+                    designed for Colorado's heavy snow and high-altitude UV exposure.
+                  </p>
+                </div>
+
+                <div className="flex md:justify-end">
+                  <Link
+                    to="/services"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-slate-950 text-white font-black uppercase tracking-widest text-xs hover:bg-secondary transition-all group-hover:gap-5"
+                  >
+                    Explore Roofing Services
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[

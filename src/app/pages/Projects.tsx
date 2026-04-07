@@ -110,8 +110,8 @@ const sections: Section[] = [
   {
     id: "tile",
     title: "TILE",
-    accent: "from-secondary via-orange-400 to-yellow-500",
-    accentColor: "rgb(215, 25, 33)",
+    accent: "from-emerald-600 via-teal-500 to-cyan-400",
+    accentColor: "rgb(16, 185, 129)",
     description:
       "Precision tile installations for floors, bathrooms, backsplashes, and entryways — built to last and crafted to impress.",
     photos: [
@@ -218,11 +218,10 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: sIdx * 0.08 }}
                 viewport={{ once: true }}
-                className={`rounded-sm border transition-colors duration-300 overflow-hidden ${
-                  isExpanded
-                    ? "bg-slate-900/80 border-white/10"
-                    : "bg-slate-900/30 border-white/5 hover:border-white/15 hover:bg-slate-900/50"
-                }`}
+                className={`rounded-sm border transition-colors duration-300 overflow-hidden ${isExpanded
+                  ? "bg-slate-900/80 border-white/10"
+                  : "bg-slate-900/30 border-white/5 hover:border-white/15 hover:bg-slate-900/50"
+                  }`}
               >
                 {/* Clickable Header Row */}
                 <button
@@ -262,9 +261,8 @@ export default function Projects() {
 
                   {/* Chevron */}
                   <span
-                    className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 transition-all duration-300 ${
-                      isExpanded ? "rotate-180" : ""
-                    }`}
+                    className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 transition-all duration-300 ${isExpanded ? "rotate-180" : ""
+                      }`}
                     style={{ backgroundColor: `${section.accentColor}15` }}
                   >
                     <ChevronDown className="h-4 w-4" style={{ color: section.accentColor }} />
