@@ -60,7 +60,7 @@ const sections: Section[] = [
     title: "ROOFING",
     accent: "from-red-400 via-orange-400 to-amber-400",
     accentColor: "rgb(251, 191, 36)",
-    description: "",
+    description: "Northern Colorado's trusted roofing experts. From complete replacements to emergency storm repairs — we handle hail damage, insurance claims, leak detection, and impact-resistant installations built for Colorado's high-altitude conditions.",
     photos: roofPhotos,
   },
 ];
