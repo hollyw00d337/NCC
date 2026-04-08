@@ -23,7 +23,7 @@ export default function Services() {
       title: "Roofing & Storm Damage Repair",
       badge: "Flagship Service",
       desc: "Northern Colorado's trusted roofing experts. From complete replacements to emergency storm repairs — we handle hail damage, insurance claims, leak detection, and impact-resistant installations built for Colorado's high-altitude conditions.",
-      features: ["Full Roof Replacement", "Storm & Hail Damage Repair", "Leak Detection & Repair", "Insurance Claim Assistance", "Impact-Resistant Materials", "Emergency Services"],
+      features: ["Asphalt Shingles", "Natural Slate", "Decra Tile", "Metal Roofing", "Commercial & Residential", "TPO", "EDPM"],
       image: imgRoofing2
     },
     {

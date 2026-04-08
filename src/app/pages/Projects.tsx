@@ -10,6 +10,8 @@ const kitchenPhotos = Object.values(import.meta.glob("../../assets/Kitchens/*.{j
 const tilePhotos = Object.values(import.meta.glob("../../assets/Tile/*.{jpeg,jpg,png,JPG}", { eager: true, import: 'default' })) as string[];
 const concretePhotos = Object.values(import.meta.glob("../../assets/Concrete/*.{jpeg,jpg,png,JPG}", { eager: true, import: 'default' })) as string[];
 const masonryPhotos = Object.values(import.meta.glob("../../assets/mansory/*.{jpeg,jpg,png,JPG}", { eager: true, import: 'default' })) as string[];
+const roofPhotos = Object.values(import.meta.glob("../../assets/roofing/*.{jpeg,jpg,png,JPG}", { eager: true, import: 'default' })) as string[];
+
 
 interface Section {
   id: string;
@@ -52,6 +54,14 @@ const sections: Section[] = [
     accentColor: "rgb(167, 139, 250)",
     description: "Expert masonry and stucco work — natural stone, brickwork, veneer, and traditional stucco systems built to last.",
     photos: masonryPhotos,
+  },
+  {
+    id: "roofing",
+    title: "ROOFING",
+    accent: "from-red-400 via-orange-400 to-amber-400",
+    accentColor: "rgb(251, 191, 36)",
+    description: "",
+    photos: roofPhotos,
   },
 ];
 
