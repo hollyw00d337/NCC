@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 mb-8 leading-relaxed max-w-sm">
-              NCC LLC — locally & owner-operated in Northern Colorado. 30+ years of combined experience, OSHA 30 certified crews, and BBB accredited. Craftsmanship You Can Trust.
+              NCC LLC — locally  owned and operated in Northern Colorado. 30+ years of combined experience, OSHA 30 certified crews, and BBB accredited. Craftsmanship You Can Trust.
             </p>
           </div>
 
