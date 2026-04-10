@@ -25,6 +25,7 @@ app.get("/make-server-71c1c944/health", (c) => {
 });
 
 // Contact Form Endpoint
+// Contact Form Endpoint
 app.post("/make-server-71c1c944/contact", async (c) => {
   try {
     const body = await c.req.json();
@@ -32,7 +33,23 @@ app.post("/make-server-71c1c944/contact", async (c) => {
     const key = `contact_${id}`;
     const timestamp = new Date().toISOString();
     
+    // Guardar en KV (igual que antes)
     await kv.set(key, { ...body, id, timestamp });
+
+    // Enviar a n8n
+    await fetch("https://trabajoncc.app.n8n.cloud/webhook/cotizacion-ncc", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: body.fullName,
+        phone: body.phone,
+        email: body.email,
+        service: body.service,
+        projectDetails: body.projectDetails,
+        folio: id,
+        timestamp,
+      }),
+    });
     
     return c.json({ success: true, message: "Contact saved successfully", id });
   } catch (error) {
